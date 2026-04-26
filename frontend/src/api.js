@@ -19,7 +19,7 @@ export async function analyzeUpload(file) {
   const formData = new FormData();
   formData.append("file", file);
 
-  const response = await fetch(`${API_BASE}/analyze-upload`, {
+  const response = await fetch(`${API_BASE}/api/analyze-upload`, {
     method: "POST",
     body: formData,
   });
@@ -36,7 +36,7 @@ export async function downloadResult(kind, result) {
   const formData = new FormData();
   formData.append("payload", JSON.stringify(result));
 
-  const response = await fetch(`${API_BASE}/download/${kind}`, {
+  const response = await fetch(`${API_BASE}/api/download/${kind}`, {
     method: "POST",
     body: formData,
   });
