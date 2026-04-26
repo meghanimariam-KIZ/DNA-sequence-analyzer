@@ -1,7 +1,7 @@
 const API_BASE = "https://dna-sequence-analyzer-421f.onrender.com";
 
 export async function analyzeSequence(sequence) {
-  const response = await fetch(`${API_BASE}/analyze`, {
+  const response = await fetch(`${API_BASE}/api/analyze`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ sequence }),
