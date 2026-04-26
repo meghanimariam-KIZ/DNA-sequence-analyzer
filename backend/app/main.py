@@ -19,7 +19,10 @@ app = FastAPI(
     description="Educational DNA analysis, demo similarity search, and phylogeny API.",
     version="1.0.0",
 )
-
+@app.get("/")
+def home():
+    return {"message": "DNA Analyzer Backend is LIVE"}
+    
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
