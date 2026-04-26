@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8000/api";
+const API_BASE = "https://dna-sequence-analyzer-421f.onrender.com";
 
 export async function analyzeSequence(sequence) {
   const response = await fetch(`${API_BASE}/analyze`, {
