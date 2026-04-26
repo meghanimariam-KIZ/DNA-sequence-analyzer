@@ -1,0 +1,7 @@
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+biopython==1.85
+python-multipart==0.0.20
+reportlab==4.3.1
+pydantic==2.11.3
+
