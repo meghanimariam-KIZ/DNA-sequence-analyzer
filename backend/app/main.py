@@ -19,10 +19,6 @@ app = FastAPI(
     description="Educational DNA analysis, demo similarity search, and phylogeny API.",
     version="1.0.0",
 )
-@app.get("/")
-def home():
-    return {"message": "DNA Analyzer Backend is LIVE"}
-    
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -30,6 +26,12 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/")
+def home():
+    return {"message": "DNA Analyzer Backend is LIVE"}
+    
+
 class AnalyzeRequest(BaseModel):
     sequence: str
 
@@ -136,3 +138,6 @@ def download(
         media_type="application/pdf",
         headers={"Content-Disposition": "attachment; filename=dna_analysis_report.pdf"},
     )
+@app.get("/api/debug")
+def debug():
+    return {"message": "NEW CORS CODE IS LIVE"}
